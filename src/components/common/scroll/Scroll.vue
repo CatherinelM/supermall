@@ -42,10 +42,28 @@
       })
 
       // 3.监听上拉事件
-      this.scroll.on('pullingUp',()=>{
-        // console.log('上拉加载更多');
-        this.$emit('pullingUp')
-      })
+      // this.scroll.on('pullingUp',()=>{
+      //   // console.log('上拉加载更多');
+      //   this.$emit('pullingUp')
+      // })
+      this.scroll.refresh()
+
+      // 3.监听滚到底部
+      if(this.pullUpLoad){
+        this.scroll.on('pullingUp',()=>{
+          // console.log('监听滚动到底部');
+          this.$emit('pullingUp');
+        })
+
+      }
+    },
+    methods:{
+      refresh(){
+        this.scroll.refresh()
+      },
+      finishPullUp(){
+       this.scroll.finishPullUp()
+      }
     }
   }
 </script>

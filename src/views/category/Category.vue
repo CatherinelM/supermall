@@ -2,7 +2,7 @@
     <div class="wrapper" ref="aaa">
       <div>
         <button @click="btnClick">按钮</button>
-        <div @click="divClick"> 呵呵呵</div>
+        <div > 呵呵呵</div>
         <ul class="content">
           <button @click="btnClick">按钮</button>
           <li>分类列表1</li>
